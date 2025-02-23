@@ -9,8 +9,9 @@
 * Return: Nothing
 */
 
-void p_char(va_list args)
+int p_char(va_list args)
 {
+	int char_lengt = 0;
 	char c;
 
 	c = va_arg(args, int);
@@ -18,13 +19,17 @@ void p_char(va_list args)
 	if (c > 0 && c < 127)
 	{
 		_putchar(c);
+		char_lengt ++;
+
 	}
 	else
 	{
 		c = ' ';
 		_putchar(c);
+		char_lengt ++;
 	}
 
+	return (char_lengt);
 }
 
 /**
@@ -33,19 +38,24 @@ void p_char(va_list args)
  * Return: Nothing
  */
 
-void p_string(va_list args)
+int p_string(va_list args)
 {
 
 	int i = 0;
+	int s_lenght;
 	char *s = va_arg(args, char*);
 
 	if (s == NULL)
 	{
 	s = "(nil)";
+	s_lenght = 5;
 	}
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
 		_putchar(*(s + i));
+		s_lenght ++;
 	}
+
+	return (s_lenght);
 }
