@@ -54,3 +54,14 @@ int _printf(const char *format, ...)
 	return (p_lenght + p_spec);
 }
 
+int main(void)
+{
+	int check1, check2;
+
+	check1 = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	check2 = printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+
+	printf("My lenght is %d and expected lenght is %d\n", check1, check2);
+
+	return (0);
+}
