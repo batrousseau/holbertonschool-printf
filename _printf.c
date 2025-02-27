@@ -51,7 +51,8 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	
+	_putchar('\0');
 	return (p_lenght + p_spec);
 }
+
 
