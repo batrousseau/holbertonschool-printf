@@ -11,7 +11,7 @@
 
 int p_char(va_list args)
 {
-	int char_lengt = 0;
+	int char_length = 0;
 	char c;
 
 	c = va_arg(args, int);
@@ -19,11 +19,11 @@ int p_char(va_list args)
 	if (c > 0 && c < 127)
 	{
 		_putchar(c);
-		char_lengt ++;
+		char_length++;
 
 	}
 
-	return (char_lengt);
+	return (char_length);
 }
 
 /**
@@ -41,14 +41,14 @@ int p_string(va_list args)
 
 	if (s == NULL)
 	{
-	s = "(nil)";
+	s = "(null)";
 	s_lenght = 5;
 	}
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
 		_putchar(*(s + i));
-		s_lenght ++;
+		s_lenght++;
 	}
 
 	return (s_lenght);
