@@ -22,12 +22,6 @@ int p_char(va_list args)
 		char_lengt ++;
 
 	}
-	else
-	{
-		c = ' ';
-		_putchar(c);
-		char_lengt ++;
-	}
 
 	return (char_lengt);
 }

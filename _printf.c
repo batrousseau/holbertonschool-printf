@@ -55,3 +55,23 @@ int _printf(const char *format, ...)
 	return (p_lenght + p_spec);
 }
 
+int main(void)
+{
+	
+	_printf("Let's print a simple sentence.\n");
+	printf("Let's print a simple sentence.\n");
+	
+	printf("%c", 'S');
+	_printf("%c", 'S');
+
+	printf("A char inside a sentence: %c. Did it work?\n", 'F');
+	_printf("A char inside a sentence: %c. Did it work?\n", 'F');
+
+	printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	_printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	
+	printf("%s", "This sentence is retrieved from va_args!\n");
+	_printf("%s", "This sentence is retrieved from va_args!\n");
+
+	return (0);
+}
