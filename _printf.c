@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
 			{
 				if (*(format + i + 1) == array[j].x)
 				{
-					array[j].fp(args);
 					p_spec = array[j].fp(args);
 					spec_control = 1;
 				}
@@ -50,9 +49,8 @@ int _printf(const char *format, ...)
 				p_lenght++;
 			}
 		}
+		
 	}
-	_putchar('\0');
 	return (p_lenght + p_spec);
 }
-
 
