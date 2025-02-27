@@ -36,7 +36,7 @@ int p_string(va_list args)
 {
 
 	int i = 0;
-	int s_lenght;
+	int s_lenght = 0;
 	char *s = va_arg(args, char*);
 
 	if (s == NULL)
