@@ -42,7 +42,7 @@ int p_string(va_list args)
 	if (s == NULL)
 	{
 	s = "(null)";
-	s_lenght = 0;
+
 	}
 
 	for (i = 0; *(s + i) != '\0'; i++)
