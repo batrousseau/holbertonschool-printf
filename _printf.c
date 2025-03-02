@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 		{'c', p_char},
 		{'s', p_string}
 	};
-
 	if (format == NULL) /* What happens if there's no string to print */
 	{
 		exit(-1);
@@ -45,12 +44,12 @@ int _printf(const char *format, ...)
 			}
 			if (spec_control == 0) /* I  save I find a spec. If don't, print the %*/
 			{
-				_putchar('%');
-				spec_control = 0;
+				_putchar(*(format + i + 1));
 				p_lenght++;
+				spec_control = 0;
 			}
 		}
-		
 	}
 	return (p_lenght + p_spec);
 }
+
