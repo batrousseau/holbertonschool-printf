@@ -7,15 +7,17 @@ int _putchar(char c);
 int p_char(va_list args);
 int p_string(va_list args);
 
+
 /**
  * struct spec - match specifier with function
  * @x: specifier
  * @fp: pointer to function that deals with specifier
  */
 
-typedef struct spec {
+typedef struct spec
+{
 char x;
-int (*fp) (va_list arg);
+int (*fp)(va_list arg);
 } specif;
 
 
