@@ -4,6 +4,21 @@
 #include <stdio.h>
 
 /**
+ * p_percent - print a percent
+ * @args: unused attribute
+ * Return: lenght
+ */
+
+int p_percent(__attribute__((unused))va_list args)
+{
+	int percent_lengt = 0;
+
+	_putchar('%');
+	percent_lengt++;
+
+	return (percent_lengt);
+}
+/**
 * p_char - print a char
 * @args: variadic argument to take
 * Return: Nothing
