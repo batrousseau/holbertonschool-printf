@@ -68,3 +68,44 @@ int p_string(va_list args)
 
 	return (s_lenght);
 }
+
+/**
+ * p_int - print an integer
+ * @args: variadic args
+ * Return: number of printed characters
+ */
+
+int p_int(va_list args)
+{
+	int i = 0, lenght = 0, int_lengt = 0;
+	char s[11];
+	long n = va_arg(args, int);
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (n < 0)
+	{
+		_putchar('-');
+		int_lengt++;
+		n = -n;
+	}
+	for (i = 1; n / 10 != 0 || n % 10 != 0; i++)
+	{
+	s[i] = n % 10;
+	n = n / 10;
+	}
+	s[i] = '\0';
+	lenght = i - 1;
+
+	for (i = lenght; i > 0; i--)
+	{
+	_putchar((s[i] + 48));
+	int_lengt++;
+	}
+	return (int_lengt);
+}
+
+

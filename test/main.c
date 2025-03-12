@@ -11,6 +11,7 @@ int main(void)
 {
 	int check1, check2;
 
+	/* check for char and strings */
 	check1 = _printf("Let's print a simple sentence.\n");
 	check2 = printf("Let's print a simple sentence.\n");
 	printf("\nMy lenght is %d and expected lenght is %d\n\n", check1, check2);
@@ -62,6 +63,86 @@ int main(void)
 	check1 = _printf("%K\n");
 	check2 = _printf("%K\n");
 	printf("\nMy lenght is %d and expected lenght is %d\n\n", check1, check2);
+
+	/* Checks for int and double*/
+
+	
+	check1 = _printf("%d\n", -1024);
+	check2 = printf("%d\n", -1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d\n", 0);
+	check2 = printf("%d\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d\n", INT_MAX);
+	check2 = printf("%d\n", INT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d\n", INT_MIN);
+	check2 = printf("%d\n", INT_MIN);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("There is %d bytes in %d KB\n", 1024, 1);
+	check2 = printf("There is %d bytes in %d KB\n", 1024, 1);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d - %d = %d\n", 1024, 2048, -1024);
+	check2 = printf("%d - %d = %d\n", 1024, 2048, -1024);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	check2 = printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", 1024);
+	check2 = printf("%i\n", 1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", -1024);
+	check2 = printf("%i\n", -1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", 0);
+	check2 = printf("%i\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", INT_MAX);
+	check2 = printf("%i\n", INT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", INT_MIN);
+	check2 = printf("%i\n", INT_MIN);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("There is %i bytes in %i KB\n", 1024, 1);
+	check2 = printf("There is %i bytes in %i KB\n", 1024, 1);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i - %i = %i\n", 1024, 2048, -1024);
+	check2 = printf("%i - %i = %i\n", 1024, 2048, -1024);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	check2 = printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d == %i\n", 1024, 1024);
+	check2 = printf("%d == %i\n", 1024, 1024);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("iddi%diddiiddi\n", 1024);
+	check2 = printf("iddi%diddiiddi\n", 1024);
+	printf("My length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%d\n", 10000);
+	check2 = printf("%d\n", 10000);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%i\n", 10000);
+	check2 = printf("%i\n", 10000);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
 
 	return (0);
 }
