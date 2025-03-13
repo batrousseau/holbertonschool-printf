@@ -9,10 +9,6 @@ _printf - Implémentation personnalisée de la fonction printf
 
 int _printf(const char *format, ...);
 ```
-
-## DESCRIPTION
-La fonction `_printf` produit une sortie formatée selon une chaîne de caractères `format`. Elle écrit la sortie sur `stdout` et retourne le nombre de caractères affichés (hors caractère null de fin).
-
 ### **Spécificateurs de format**
 La chaîne `format` détermine comment les arguments suivants sont interprétés et affichés. Les spécificateurs pris en charge sont :
 
@@ -44,73 +40,6 @@ _printf("Caractère : %c\n", 'A');
 _printf("Signe pourcentage : %%\n");
 // Affiche : Signe pourcentage : %
 ```
-## FLOWCHART
-
-           +----------------+
-           |     Début       |
-           +----------------+
-                    |
-                    v
-           +----------------+
-           | format == NULL? |
-           +----------------+
-              |        |
-              | Oui    | Non
-              v        v
-    +----------------+   +------------------------+
-    | Quitter avec -1|   | Initialisation des     |
-    | (-1 exit)      |   | variables & va_start() |
-    +----------------+   +------------------------+
-                                  |
-                                  v
-                      +----------------------+
-                      | Parcourir format[i]  |
-                      +----------------------+
-                                  |
-                                  v
-                     +-------------------------+
-                     | format[i] == '%' ?      |
-                     +-------------------------+
-                         |            |
-                         | Non        | Oui
-                         v            v
-             +------------------+  +----------------------+
-             | Afficher caractère |  | Chercher spécificateur |
-             | normal & p_lenght++|  | après '%'             |
-             +------------------+  +----------------------+
-                         |            |
-                         v            v
-               +------------------+  +------------------------+
-               | i++               |  | Spécificateur trouvé ? |
-               +------------------+  +------------------------+
-                         |            | 
-                         | Non        | Oui
-                         v            v
-               +------------------+  +-------------------------+
-               | Retourner '%'     |  | Exécuter la fonction   |
-               | p_lenght++        |  | correspondante         |
-               +------------------+  +-------------------------+
-                         |            |
-                         v            v
-               +------------------+  +------------------+
-               | i++               |  | i++               |
-               +------------------+  +------------------+
-                         |            |
-                         +------------+
-                         |
-                         v
-               +------------------------+
-               | Fin de format[i] ?      |
-               +------------------------+
-                         |
-                         | Non
-                         v
-                 Retourner en boucle
-                         |
-                         v
-                      +------+
-                      | Fin  |
-                      +------+
 
 ## REMARQUES
 - **Cette implémentation ne prend pas en charge tous les spécificateurs de `printf`** (ex. les nombres flottants).
