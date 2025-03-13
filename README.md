@@ -3,6 +3,9 @@ He tries to code the printf function, you never believe what happens !
 ## DESCRIPTION
 La fonction `_printf` produit une sortie formatée selon une chaîne de caractères `format`. Elle écrit la sortie sur `stdout` et retourne le nombre de caractères affichés (hors caractère null de fin).
 
+## INSTRUCTION DE COMPILATION 
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+
 ### **Spécificateurs de format**
 La chaîne `format` détermine comment les arguments suivants sont interprétés et affichés. Les spécificateurs pris en charge sont :
 
