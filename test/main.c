@@ -143,6 +143,32 @@ int main(void)
 	check2 = printf("%i\n", 10000);
 	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
 
+	/* test for binary */
+
+	check1 = _printf("%b\n", 5);
+	check2 = printf("101\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%b\n", 1024);
+	check2 = printf("10000000000\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%b\n", 0);
+	check2 = printf("0\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%b\n", 1);
+	check2 = printf("1\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%b\n", 255);
+	check2 = printf("11111111\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%b\n", UINT_MAX);
+	check2 = printf("11111111111111111111111111111111\n");
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
 
 	return (0);
 }
+

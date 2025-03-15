@@ -109,3 +109,45 @@ int p_int(va_list args)
 }
 
 
+/**
+ * p_binary - print an unsigned int in binary
+ * @arg: on of the argument of a variadic list
+ * Return: number of printed characters
+ */
+
+int p_binary(va_list arg)
+{
+	int i = 0, lenght = 0;
+	unsigned int binary = va_arg(arg, unsigned int);
+	char array[33];
+	int binary_lenght = 0;
+
+	if (binary == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	for (i = 1; binary / 10 != 0 || binary % 10 != 0; i++)
+	{
+		if (binary % 2 == 0)
+		{
+			array[i] = 48;
+		}
+		else
+		{
+			array[i] = 49;
+		}
+		binary = binary / 2;
+	}
+	array[i] = '\0';
+	lenght = i - 1;
+
+	for (i = lenght; i > 0; i--)
+	{
+	_putchar(array[i]);
+	binary_lenght++;
+	}
+
+	return (binary_lenght);
+}
