@@ -10,6 +10,10 @@ int p_percent(va_list args);
 int p_int(va_list args);
 int p_double(va_list args);
 int p_binary(va_list args);
+int p_u(va_list args);
+int p_octal(va_list args);
+int p_hexa(va_list args);
+int p_hexa_up(va_list args);
 
 /**
  * struct spec - match specifier with function

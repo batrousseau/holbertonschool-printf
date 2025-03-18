@@ -169,6 +169,125 @@ int main(void)
 	check2 = printf("11111111111111111111111111111111\n");
 	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
 
+
+	/* test for u*/
+	check1 = _printf("%u\n", 1024);
+	check2 = printf("%u\n", 1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%u\n", 0);
+	check2 = printf("%u\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%u\n", UINT_MAX);
+	check2 = printf("%u\n", UINT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%u\n", 4294967295);
+	check2 = printf("%u\n", 4294967295);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	/* test for o*/
+	check1 = _printf("%o\n", 1024);
+	check2 = printf("%o\n", 1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 0);
+	check2 = printf("%o\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 7);
+	check2 = printf("%o\n", 7);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 8);
+	check2 = printf("%o\n", 8);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 255);
+	check2 = printf("%o\n", 255);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 512);
+	check2 = printf("%o\n", 512);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", UINT_MAX);
+	check2 = printf("%o\n", UINT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%o\n", 4294967295);
+	check2 = printf("%o\n", 4294967295);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	/* test for %x*/
+	check1 = _printf("%x\n", 1024);
+	check2 = printf("%x\n", 1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", 0);
+	check2 = printf("%x\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", 255);
+	check2 = printf("%x\n", 255);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", 512);
+	check2 = printf("%x\n", 512);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", 4096);
+	check2 = printf("%x\n", 4096);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", UINT_MAX);
+	check2 = printf("%x\n", UINT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%x\n", 4294967295);
+	check2 = printf("%x\n", 4294967295);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+	
+
+	/* Test for %X*/
+
+	check1 = _printf("%X\n", 1024);
+	check2 = printf("%X\n", 1024);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", 0);
+	check2 = printf("%X\n", 0);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", 255);
+	check2 = printf("%X\n", 255);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", 512);
+	check2 = printf("%X\n", 512);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", 4096);
+	check2 = printf("%X\n", 4096);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", UINT_MAX);
+	check2 = printf("%X\n", UINT_MAX);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("%X\n", 4294967295);
+	check2 = printf("%X\n", 4294967295);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("Hexadecimal complex case: %X + %X = %X\n", 1024, 2048, 1024 + 2048);
+	check2 = printf("Hexadecimal complex case: %X + %X = %X\n", 1024, 2048, 1024 + 2048);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+
+	check1 = _printf("Hexadecimal max values: %X & %X\n", UINT_MAX, 65535);
+	check2 = printf("Hexadecimal max values: %X & %X\n", UINT_MAX, 65535);
+	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+	
 	return (0);
 }
 

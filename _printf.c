@@ -16,8 +16,8 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, p_lenght = 0, p_spec = 0, p_spec_temp = 0, spec_control = 0;
 	va_list args;
 	specif array[] = {
-	{'c', p_char}, {'s', p_string}, {'%', p_percent}, {'d', p_int},
-	{'i', p_int}, {'b', p_binary}
+	{'c', p_char}, {'s', p_string}, {'%', p_percent}, {'d', p_int}, {'x', p_hexa}
+	, {'i', p_int}, {'b', p_binary}, {'u', p_u}, {'o', p_octal}, {'X', p_hexa_up}
 	};
 	if (format == NULL) /* What happens if there's no string to print */
 	{
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; j < 6; j++)
+			for (j = 0; j < 10; j++)
 			{
 				if (*(format + i + 1) == array[j].x)
 				{
