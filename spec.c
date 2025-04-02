@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
+
 /**
  * p_percent - print a percent
  * @args: unused attribute
@@ -50,23 +51,19 @@ int p_char(va_list args)
 int p_string(va_list args)
 {
 
-	int i = 0;
-	int s_lenght = 0;
 	char *s = va_arg(args, char*);
+	int s_lenght = get_string_lenght(s);
+
 
 	if (s == NULL)
 	{
-	s = "(null)";
-
+		s = "(null)";
 	}
 
-	for (i = 0; *(s + i) != '\0'; i++)
-	{
-		_putchar(*(s + i));
-		s_lenght++;
-	}
+	write_buffer(s);
 
 	return (s_lenght);
+
 }
 
 /**

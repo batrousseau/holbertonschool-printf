@@ -14,6 +14,8 @@ int p_u(va_list args);
 int p_octal(va_list args);
 int p_hexa(va_list args);
 int p_hexa_up(va_list args);
+int get_string_lenght(char *s);
+int write_buffer(char *s);
 
 /**
  * struct spec - match specifier with function

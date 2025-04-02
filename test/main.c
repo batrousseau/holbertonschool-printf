@@ -288,6 +288,52 @@ int main(void)
 	check2 = printf("Hexadecimal max values: %X & %X\n", UINT_MAX, 65535);
 	printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
 	
+
+	 // Buffer de moins de 1024 caractères
+	 check1 = _printf("1234567890\n");
+	 check2 = printf("1234567890\n");
+	 printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+ 
+	 // Buffer exactement à 1024 caractères
+	 char buffer1[1025];
+	 for (int i = 0; i < 1023; i++)
+		 buffer1[i] = 'A';
+	 buffer1[1023] = '\n';
+	 buffer1[1024] = '\0';
+	 check1 = _printf("%s", buffer1);
+	 check2 = printf("%s", buffer1);
+	 printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+ 
+	 // Buffer > 1024 caractères
+	 char buffer2[1500];
+	 for (int i = 0; i < 1498; i++)
+		 buffer2[i] = 'B';
+	 buffer2[1498] = '\n';
+	 buffer2[1499] = '\0';
+	 check1 = _printf("%s", buffer2);
+	 check2 = printf("%s", buffer2);
+	 printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+ 
+	 // Plusieurs petits appels consécutifs (devrait bufferiser correctement)
+	 check1 = 0;
+	 check2 = 0;
+	 for (int i = 0; i < 100; i++) {
+		 check1 += _printf("X");
+		 check2 += printf("X");
+	 }
+	 _printf("\n");
+	 printf("\n");
+	 printf("\nMy length is %d and expected length is %d\n\n", check1 + 1, check2 + 1);
+ 
+	 // Alternance string long + petit char
+	 char buffer3[900];
+	 memset(buffer3, 'Z', 899);
+	 buffer3[899] = '\0';
+ 
+	 check1 = _printf("%s!%c\n", buffer3, 'Q');
+	 check2 = printf("%s!%c\n", buffer3, 'Q');
+	 printf("\nMy length is %d and expected length is %d\n\n", check1, check2);
+	 
 	return (0);
 }
 
