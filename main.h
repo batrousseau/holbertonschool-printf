@@ -14,9 +14,14 @@ int p_u(va_list args);
 int p_octal(va_list args);
 int p_hexa(va_list args);
 int p_hexa_up(va_list args);
+int get_const_string_lenght(const char *s);
 int get_string_lenght(char *s);
 int write_buffer(char *s);
-
+int get_lenght_before_percent(const char *s);
+char *_formatcpy(char *dest, const char *src);
+char *_strncpy2(char *dest, const char *src, int n);
+int print_format_with_buffer(const char *s);
+void check_null_format(const char *s);
 /**
  * struct spec - match specifier with function
  * @x: specifier

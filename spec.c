@@ -32,13 +32,12 @@ int p_char(va_list args)
 
 	c = va_arg(args, int);
 
-	if (c > 0 && c < 127)
+	if (c >= 0 && c < 127)
 	{
 		_putchar(c);
 		char_length++;
 
 	}
-
 	return (char_length);
 }
 
